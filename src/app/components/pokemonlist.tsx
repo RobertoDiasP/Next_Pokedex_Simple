@@ -32,14 +32,15 @@ export default function PokemonList({ searchTerm }: PokemonListProps) {
   );
 
   return (
-    <div>
-      <ul className="list-none mx-auto max-w-md">
-        {filteredPokemon.map((poke, index) => (
-          <li key={index} className="text-lg text-gray-800 capitalize">
-            {poke.name}
-          </li>
-        ))}
-      </ul>
+    <div className="grid grid-cols-4 gap-4 justify-center">
+      {filteredPokemon.map((poke, index) => (
+        <div
+          key={index}
+          className="bg-white p-4 rounded-lg shadow-md w-48 h-48 flex flex-col items-center justify-center"
+        >
+          <h2 className="text-lg text-gray-800 capitalize">{poke.name}</h2>
+        </div>
+      ))}
     </div>
   );
 }
